@@ -11,7 +11,7 @@
 }
 
 * {
-    margin: 0;
+    margin: 0
     padding: 0;
     box-sizing: border-box;
 }
@@ -463,17 +463,17 @@ nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .project-card:nth-child(even) .project-details {
         order: -1;
     }
-    
+
     .about {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
     }
-    
+
     .skills-section {
         margin-top: 0;
     }
