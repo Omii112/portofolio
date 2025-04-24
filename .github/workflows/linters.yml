@@ -46,7 +46,22 @@ jobs:
           [ -f .stylelintrc.json ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/html-css-js/.stylelintrc.json
       - name: Stylelint Report
         run: npx stylelint "**/*.{css,scss}"
-
+  debug-stylelint:
+    name: Debug Stylelint
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - name: Install dependencies
+        run: npm install
+      - name: Check stylelint version
+        run: npx stylelint --version
+      - name: Print stylelint config
+        run: npx stylelint --print-config styles.css
+      - name: Run stylelint
+        run: npx stylelint "**/*.{css,scss}"
   nodechecker:
     name: node_modules checker
     runs-on: ubuntu-22.04
